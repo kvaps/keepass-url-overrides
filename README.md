@@ -34,3 +34,13 @@ Install `sshpass` package
 ```
 cmd://<your-terminal-emulator> -e 'sshpass -p {PASSWORD} ssh {USERNAME}@{BASE:RMVSCM}'
 ```
+
+## FileZilla
+
+### Overrides
+
+* `ftp` scheme
+
+```
+cmd://filezilla 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
+```
