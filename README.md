@@ -21,3 +21,16 @@ cmd://bash -c "FILE=/tmp/connect.remmina ; echo -en '[remmina]\nname={TITLE}\npr
 ```
 cmd://bash -c "FILE=/tmp/connect.remmina ; echo -en '[remmina]\nname={TITLE}\nprotocol=VNC\nserver={BASE:RMVSCM}\npassword='`remmina-encode-password.py {PASSWORD}` > $FILE ; remmina -c $FILE ; rm -f $FILE"
 ```
+
+## OpenSSH
+
+### Installation
+
+Install `sshpass` package
+
+### Overrides
+
+* `ssh` scheme
+```
+cmd://<your-terminal-emulator> -e 'sshpass -p {PASSWORD} ssh {USERNAME}@{BASE:RMVSCM}'
+```
