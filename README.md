@@ -44,3 +44,17 @@ cmd://<your-terminal-emulator> -e 'sshpass -p {PASSWORD} ssh {USERNAME}@{BASE:RM
 ```
 cmd://filezilla 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
 ```
+
+## WinBox
+
+### Installation
+
+Install `winbox` package. I use [winbox](https://aur.archlinux.org/packages/winbox/) from aur.
+
+### Overrides
+
+* `winbox` scheme
+```
+cmd://winbox '{BASE:RMVSCM}' '{USERNAME}' '{PASSWORD}'
+```
+
