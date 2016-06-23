@@ -1,5 +1,5 @@
 # URL Overrides for KeePass2 in Linux
-Here I collect url override scripts for keepass2 in linux system
+Here I collect url override scripts for keepass2 in linux and windows system
 
 ## SSH
 
@@ -84,15 +84,7 @@ chmod +x /usr/local/bin/remmina-encode-password.py
 cmd://cmd /c "net use "{URL:RMVSCM}" /user:"{USERNAME}" "{PASSWORD}" && start \\{URL:RMVSCM}"
 ```
 
-##### <sup>[linux]</sup> Dolphin
-
-* ** Scheme:** `smb://`
-* **Command:**
-```
-cmd://dolphin 'smb://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
-```
-
-##### <sup>[linux]</sup> Nautilus / Thunar
+##### <sup>[linux]</sup> Nautilus / Thunar / Dolphin
 
 * ** Scheme:** `smb://`
 * **Command:**
@@ -100,7 +92,7 @@ cmd://dolphin 'smb://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
 echo '{PASSWORD}' | gvfs-mount smb://{USERNAME}@{BASE:RMVSCM} && nautilus smb://{USERNAME}@{BASE:RMVSCM} 
 ```
 
-For Thunar is the same command, just replace `nautilus` to `thunar`.
+For Thunar and Dolphin is the same command, just replace `nautilus` to `thunar` or `dolphin`.
 
 
 ## FTP
@@ -129,15 +121,7 @@ cmd://"explorer.exe" 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
 cmd://filezilla 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
 ```
 
-##### <sup>[linux]</sup> Dolphin
-
-* ** Scheme:** `ftp://`
-* **Command:**
-```
-cmd://dolphin 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
-```
-
-##### <sup>[linux]</sup> Nautilus / Thunar
+##### <sup>[linux]</sup> Nautilus / Thunar / Dolphin
 
 * ** Scheme:** `smb://`
 * **Command:**
@@ -145,7 +129,7 @@ cmd://dolphin 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
 echo '{PASSWORD}' | gvfs-mount ftp://{USERNAME}@{BASE:RMVSCM} && nautilus ftp://{USERNAME}@{BASE:RMVSCM} 
 ```
 
-For Thunar is the same command, just replace `nautilus` to `thunar`.
+For Thunar and Dolphin is the same command, just replace `nautilus` to `thunar` or `dolphin`.
 
 ## TeamViewer
 
