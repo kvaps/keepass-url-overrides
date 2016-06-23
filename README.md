@@ -7,7 +7,7 @@ Here I collect url override scripts for keepass2 in linux and windows system
 * ** Scheme:** `ssh://`
 * **Command:**
 ```
-cmd://"{ENV_PROGRAMFILES_X86}\PuTTY\putty.exe" -ssh "{USERNAME}@{URL:RMVSCM}" -pw {BASE:PORT} -pw "{PASSWORD}"
+cmd://"{ENV_PROGRAMFILES_X86}\PuTTY\putty.exe" -ssh "{USERNAME}@{URL:RMVSCM}" -pw "{PASSWORD}"
 ```
 
 ##### <sup>[linux]</sup> OpenSSH Client
