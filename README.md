@@ -18,6 +18,12 @@ cmd://"{ENV_PROGRAMFILES_X86}\PuTTY\putty.exe" -ssh "{USERNAME}@{URL:RMVSCM}" -p
 cmd://xterm -e sshpass -p {PASSWORD} ssh -o StrictHostKeyChecking=no {USERNAME}@{BASE:RMVSCM}
 ```
 
+  more secure command:
+
+```
+cmd://bash -c 'FILE=$(mktemp) && chmod 600 $FILE && echo {PASSWORD} > $FILE ; xterm -e sshpass -f $FILE ssh -o StrictHostKeyChecking=no {USERNAME}@{BASE:RMVSCM}; rm -f $FILE'
+```
+
 You need to install `sshpass` package.
 *Instead of `xterm` you can write your own favorite terminal emulator*
 
