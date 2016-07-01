@@ -7,7 +7,7 @@ Here I collect url override scripts for KeePass in Linux and Windows systems.
 * ** Scheme:** `ssh`
 * **Command:**
 ```
-cmd://"{ENV_PROGRAMFILES_X86}\PuTTY\putty.exe" -ssh "{USERNAME}@{URL:RMVSCM}" -pw "{PASSWORD}"
+cmd://"{ENV_PROGRAMFILES_X86}\PuTTY\putty.exe" -ssh "{USERNAME}@{URL:HOST}" -P {BASE:PORT} -pw "{PASSWORD}" 
 ```
 
 ##### <sup>[linux]</sup> OpenSSH Client
@@ -33,7 +33,7 @@ You need to install `sshpass` package.
 * ** Scheme:** `rdp`
 * **Command:**
 ```
-cmd://cmd /c "cmdkey /generic:TERMSRV/{URL:RMVSCM} /user:{USERNAME} /pass:{PASSWORD} && mstsc /v:{URL:RMVSCM} && timeout /t 5 /nobreak && cmdkey /delete:TERMSRV/{URL:RMVSCM}"
+cmd://cmd /c "cmdkey /generic:TERMSRV/{BASE:RMVSCM} /user:{USERNAME} /pass:{PASSWORD} && mstsc /v:{BASE:RMVSCM} && timeout /t 5 /nobreak && cmdkey /delete:TERMSRV/{BASE:RMVSCM}"
 ```
 
 *Thanks Valiant from bitcollectors.com for this solution*
@@ -43,12 +43,12 @@ cmd://cmd /c "cmdkey /generic:TERMSRV/{URL:RMVSCM} /user:{USERNAME} /pass:{PASSW
 * ** Scheme:** `rdp`
 * **Command:**
 ```
-cmd://bash -c "FILE=/tmp/connect.remmina ; echo -en '[remmina]\nname={TITLE}\nprotocol=RDP\nserver={BASE:RMVSCM}\nscale=1\nusername={USERNAME}\npassword='`remmina-encode-password.py {PASSWORD}` > $FILE ; remmina -c $FILE ; rm -f $FILE"
+cmd://bash -c "FILE=/tmp/connect.remmina ; echo -en '[remmina]\nname={TITLE}\nprotocol=RDP\nserver={BASE:RMVSCM}\nscale=1\nviewmode=1\nusername={USERNAME}\npassword='`remmina-encode-password.py {PASSWORD}` > $FILE ; remmina -c $FILE ; rm -f $FILE"
 ```
 
   More secure command:
 ```
-cmd://bash -c "export DIR=/tmp/remmina; mkdir -p $DIR; chmod 700 $DIR; export FILE=$(mktemp -p $DIR XXXXXXXXXX --suffix=.remmina); echo -e '[remmina]\nname={TITLE}\nprotocol=RDP\nserver={BASE:RMVSCM}\nscale=1\nusername={USERNAME}\npassword='`remmina-encode-password.py {PASSWORD}` > $FILE ; nohup remmina -c $FILE &"
+cmd://bash -c "export DIR=/tmp/remmina; mkdir -p $DIR; chmod 700 $DIR; export FILE=$(mktemp -p $DIR XXXXXXXXXX --suffix=.remmina); echo -e '[remmina]\nname={TITLE}\nprotocol=RDP\nserver={BASE:RMVSCM}\nscale=1\nviewmode=1\nusername={USERNAME}\npassword='`remmina-encode-password.py {PASSWORD}` > $FILE ; nohup remmina -c $FILE &"
 ```
 
 also we will need to install a small helper script:
@@ -74,12 +74,12 @@ Save `tightvnc-jviewer.jar` to `C:\Program Files\tightvnc-jviewer.jar`.
 * ** Scheme:** `vnc`
 * **Command:**
 ```
-cmd://bash -c "FILE=/tmp/connect.remmina ; echo -en '[remmina]\nname={TITLE}\nprotocol=VNC\nserver={BASE:RMVSCM}\nscale=1\nusername={USERNAME}\npassword='`remmina-encode-password.py {PASSWORD}` > $FILE ; remmina -c $FILE ; rm -f $FILE"
+cmd://bash -c "FILE=/tmp/connect.remmina ; echo -en '[remmina]\nname={TITLE}\nprotocol=VNC\nserver={BASE:RMVSCM}\nscale=1\nviewmode=1\nusername={USERNAME}\npassword='`remmina-encode-password.py {PASSWORD}` > $FILE ; remmina -c $FILE ; rm -f $FILE"
 ```
 
   More secure command:
 ```
-cmd://bash -c "export DIR=/tmp/remmina; mkdir -p $DIR; chmod 700 $DIR; export FILE=$(mktemp -p $DIR XXXXXXXXXX --suffix=.remmina); echo -e '[remmina]\nname={TITLE}\nprotocol=VNC\nserver={BASE:RMVSCM}\nscale=1\nusername={USERNAME}\npassword='`remmina-encode-password.py {PASSWORD}` > $FILE ; nohup remmina -c $FILE &"
+cmd://bash -c "export DIR=/tmp/remmina; mkdir -p $DIR; chmod 700 $DIR; export FILE=$(mktemp -p $DIR XXXXXXXXXX --suffix=.remmina); echo -e '[remmina]\nname={TITLE}\nprotocol=VNC\nserver={BASE:RMVSCM}\nscale=1\nviewmode=1\nusername={USERNAME}\npassword='`remmina-encode-password.py {PASSWORD}` > $FILE ; nohup remmina -c $FILE &"
 ```
 
 We do also need a little helper script, about which I wrote above
@@ -96,7 +96,7 @@ chmod +x /usr/local/bin/remmina-encode-password.py
 * ** Scheme:** `smb`
 * **Command:**
 ```
-cmd://cmd /c "net use "{URL:RMVSCM}" /user:"{USERNAME}" "{PASSWORD}" && start \\{URL:RMVSCM}"
+cmd://cmd /c "net use "{BASE:RMVSCM}" /user:"{USERNAME}" "{PASSWORD}" && start \\{BASE:RMVSCM}"
 ```
 
 ##### <sup>[linux]</sup> Nautilus / Thunar / Dolphin
