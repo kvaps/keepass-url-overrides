@@ -195,3 +195,19 @@ cmd://winbox '{BASE:RMVSCM}' '{USERNAME}' '{PASSWORD}'
 ```
 
 *I use winbox from [AUR](https://aur.archlinux.org/packages/winbox/).*
+
+
+## Cisco
+
+####<sup>[windows]</sup>  PuTTY
+
+* ** Scheme:** `cisco`
+* **Command:**
+```
+cmd://{ENV_PROGRAMFILES_X86}\scriptsdir\Connector_Cisco.vbs "{S:lan}" "{USERNAME}" "{PASSWORD}" "{S:enable}"
+```
+
+  Also download script [Connector_Cisco.vbs](https://raw.githubusercontent.com/kvaps/keepass-url-overrides/master/cisco/Connector_Cisco.vbs)
+  Save it to: `C:\Program Files (x86)\Connector_Cisco.vbs`
+
+    *Thanks [therb1](https://habrahabr.ru/users/therb1/) from habrahabr.ru for this solution and script*
