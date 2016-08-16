@@ -33,10 +33,10 @@ You need to install `sshpass` package.
 * ** Scheme:** `rdp`
 * **Command:**
 ```
-cmd://cmd /c "cmdkey /generic:TERMSRV/{BASE:RMVSCM} /user:{USERNAME} /pass:{PASSWORD} && mstsc /v:{BASE:RMVSCM} && timeout /t 5 /nobreak && cmdkey /delete:TERMSRV/{BASE:RMVSCM}"
+cmd://cmd /c "cmdkey /generic:TERMSRV/{URL:HOST} /user:{USERNAME} /pass:{PASSWORD} && mstsc /v:{BASE:RMVSCM} && cmdkey /delete:TERMSRV/{URL:HOST}"
 ```
 
-*Thanks Valiant from bitcollectors.com for this solution*
+*Thanks Valiant from bitcollectors.com and [DeWhite](https://habrahabr.ru/users/dewhite/) from habrahabr.ru for this solution*
 
 ##### <sup>[linux]</sup> Remmina
 
