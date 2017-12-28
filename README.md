@@ -4,7 +4,7 @@ Here I collect url override scripts for KeePass in Linux and Windows systems.
 ## SSH
 
 ##### <sup>[windows]</sup> PuTTY
-* ** Scheme:** `ssh`
+* **Scheme:** `ssh`
 * **Command:**
 ```
 cmd://"{ENV_PROGRAMFILES_X86}\PuTTY\putty.exe" -ssh "{USERNAME}@{URL:HOST}" -P {BASE:PORT} -pw "{PASSWORD}" 
@@ -12,7 +12,7 @@ cmd://"{ENV_PROGRAMFILES_X86}\PuTTY\putty.exe" -ssh "{USERNAME}@{URL:HOST}" -P {
 
 ##### <sup>[linux]</sup> OpenSSH Client
 
-* ** Scheme:** `ssh`
+* **Scheme:** `ssh`
 * **Command:**
 ```
 cmd://xterm -e sshpass -p {PASSWORD} ssh -o StrictHostKeyChecking=no {USERNAME}@{BASE:RMVSCM}
@@ -30,7 +30,7 @@ You need to install `sshpass` package.
 
 ##### <sup>[windows]</sup> MSTSC
 
-* ** Scheme:** `rdp`
+* **Scheme:** `rdp`
 * **Command:**
 ```
 cmd://cmd /c "cmdkey /generic:TERMSRV/{URL:HOST} /user:{USERNAME} /pass:{PASSWORD} && mstsc /v:{BASE:RMVSCM} && cmdkey /delete:TERMSRV/{URL:HOST}"
@@ -40,7 +40,7 @@ cmd://cmd /c "cmdkey /generic:TERMSRV/{URL:HOST} /user:{USERNAME} /pass:{PASSWOR
 
 ##### <sup>[linux]</sup> Remmina
 
-* ** Scheme:** `rdp`
+* **Scheme:** `rdp`
 * **Command:**
 ```
 cmd://bash -c "FILE=/tmp/connect.remmina ; echo -en '[remmina]\nname={TITLE}\nprotocol=RDP\nserver={BASE:RMVSCM}\nscale=1\nviewmode=1\nusername={USERNAME}\npassword='`remmina-encode-password.py {PASSWORD}` > $FILE ; remmina -c $FILE ; rm -f $FILE"
@@ -61,7 +61,7 @@ chmod +x /usr/local/bin/remmina-encode-password.py
 
 ##### <sup>[windows]</sup> RealVNC
 
-* ** Scheme:** `vnc`
+* **Scheme:** `vnc`
 * **Command:**
 ```
 cmd://java -jar "{ENV_PROGRAMFILES}\tightvnc-jviewer.jar" -user="{USERNAME}" -password="{PASSWORD}" {BASE:RMVSCM}
@@ -71,7 +71,7 @@ Save `tightvnc-jviewer.jar` to `C:\Program Files\tightvnc-jviewer.jar`.
 
 ##### <sup>[linux]</sup> Remmina
 
-* ** Scheme:** `vnc`
+* **Scheme:** `vnc`
 * **Command:**
 ```
 cmd://bash -c "FILE=/tmp/connect.remmina ; echo -en '[remmina]\nname={TITLE}\nprotocol=VNC\nserver={BASE:RMVSCM}\nscale=1\nviewmode=1\nusername={USERNAME}\npassword='`remmina-encode-password.py {PASSWORD}` > $FILE ; remmina -c $FILE ; rm -f $FILE"
@@ -93,7 +93,7 @@ chmod +x /usr/local/bin/remmina-encode-password.py
 
 ##### <sup>[windows]</sup> Explorer
 
-* ** Scheme:** `smb`
+* **Scheme:** `smb`
 * **Command:**
 ```
 cmd://cmd /c "net use "{BASE:RMVSCM}" /user:"{USERNAME}" "{PASSWORD}" && start \\{BASE:RMVSCM}"
@@ -101,7 +101,7 @@ cmd://cmd /c "net use "{BASE:RMVSCM}" /user:"{USERNAME}" "{PASSWORD}" && start \
 
 ##### <sup>[linux]</sup> Nautilus / Thunar / Dolphin
 
-* ** Scheme:** `smb`
+* **Scheme:** `smb`
 * **Command:**
 ```
 cmd://bash -c "echo -e '\n{PASSWORD}' | gvfs-mount 'smb://{USERNAME}@{BASE:RMVSCM}' ; nautilus 'smb://{USERNAME}@{BASE:RMVSCM}'"
@@ -119,7 +119,7 @@ For Thunar and Dolphin is the same command, just replace `nautilus` to `thunar` 
 
 ##### <sup>[windows]</sup> FileZilla FTP Client
 
-* ** Scheme:** `ftp`
+* **Scheme:** `ftp`
 * **Command:**
 ```
 cmd://"{ENV_PROGRAMFILES_X86}\FileZilla FTP Client\filezilla.exe" 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
@@ -127,7 +127,7 @@ cmd://"{ENV_PROGRAMFILES_X86}\FileZilla FTP Client\filezilla.exe" 'ftp://{USERNA
 
 ##### <sup>[windows]</sup> Windows Explorer
 
-* ** Scheme:** `ftp`
+* **Scheme:** `ftp`
 * **Command:**
 ```
 cmd://"explorer.exe" 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
@@ -135,7 +135,7 @@ cmd://"explorer.exe" 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
 
 ##### <sup>[linux]</sup> FileZilla FTP Client
 
-* ** Scheme:** `ftp`
+* **Scheme:** `ftp`
 * **Command:**
 ```
 cmd://filezilla 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
@@ -143,7 +143,7 @@ cmd://filezilla 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
 
 ##### <sup>[linux]</sup> Nautilus / Thunar / Dolphin
 
-* ** Scheme:** `smb`
+* **Scheme:** `smb`
 * **Command:**
 ```
 cmd://bash -c "echo -e '\n{PASSWORD}' | gvfs-mount 'ftp://{USERNAME}@{BASE:RMVSCM}' ; nautilus 'ftp://{USERNAME}@{BASE:RMVSCM}'"
@@ -160,7 +160,7 @@ For Thunar and Dolphin is the same command, just replace `nautilus` to `thunar` 
 
 ##### <sup>[windows]</sup> TeamViewer
 
-* ** Scheme:** `teamviewer`
+* **Scheme:** `teamviewer`
 * **Command:**
 ```
 cmd://"{ENV_PROGRAMFILES_X86}\TeamViewer\TeamViewer.exe" -i "{USERNAME}" --Password "{PASSWORD}"
@@ -168,7 +168,7 @@ cmd://"{ENV_PROGRAMFILES_X86}\TeamViewer\TeamViewer.exe" -i "{USERNAME}" --Passw
 
 ##### <sup>[linux]</sup> TeamViewer
 
-* ** Scheme:** `teamviewer`
+* **Scheme:** `teamviewer`
 * **Command:**
 ```
 cmd://teamviewer -i "{USERNAME}" --Password "{PASSWORD}"
@@ -178,7 +178,7 @@ cmd://teamviewer -i "{USERNAME}" --Password "{PASSWORD}"
 
 ##### <sup>[windows]</sup> Winbox
 
-* ** Scheme:** `winbox`
+* **Scheme:** `winbox`
 * **Command:**
 ```
 cmd://{ENV_PROGRAMFILES_X86}\winbox.exe '{BASE:RMVSCM}' '{USERNAME}' '{PASSWORD}'
@@ -188,7 +188,7 @@ cmd://{ENV_PROGRAMFILES_X86}\winbox.exe '{BASE:RMVSCM}' '{USERNAME}' '{PASSWORD}
 
 ##### <sup>[linux]</sup> Winbox
 
-* ** Scheme:** `winbox`
+* **Scheme:** `winbox`
 * **Command:**
 ```
 cmd://winbox '{BASE:RMVSCM}' '{USERNAME}' '{PASSWORD}'
@@ -201,7 +201,7 @@ cmd://winbox '{BASE:RMVSCM}' '{USERNAME}' '{PASSWORD}'
 
 ####<sup>[windows]</sup>  PuTTY
 
-* ** Scheme:** `cisco`
+* **Scheme:** `cisco`
 * **Command:**
 ```
 cmd://{ENV_PROGRAMFILES_X86}\scriptsdir\Connector_Cisco.vbs "{S:lan}" "{USERNAME}" "{PASSWORD}" "{S:enable}"
@@ -215,7 +215,7 @@ cmd://{ENV_PROGRAMFILES_X86}\scriptsdir\Connector_Cisco.vbs "{S:lan}" "{USERNAME
 ## VSphere Client
 
 ##### <sup>[windows]</sup> VpxClient
-* ** Scheme:** `vpx`
+* **Scheme:** `vpx`
 * **Command:**
 ```
 cmd://"{ENV_PROGRAMFILES_X86}\VMware\Infrastructure\Virtual Infrastructure Client\Launcher\VpxClient.exe" -i -s {URL:RMVSCM} -u {USERNAME} -p {PASSWORD}
