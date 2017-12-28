@@ -3,14 +3,14 @@ Here I collect url override scripts for KeePass in Linux and Windows systems.
 
 ## SSH
 
-##### <sup>[windows]</sup> PuTTY
+##### PuTTY <sup>[windows]</sup> 
 * **Scheme:** `ssh`
 * **Command:**
 ```
 cmd://"{ENV_PROGRAMFILES_X86}\PuTTY\putty.exe" -ssh "{USERNAME}@{URL:HOST}" -P {BASE:PORT} -pw "{PASSWORD}" 
 ```
 
-##### <sup>[linux]</sup> OpenSSH Client
+##### OpenSSH Client <sup>[linux]</sup>
 
 * **Scheme:** `ssh`
 * **Command:**
@@ -28,7 +28,7 @@ You need to install `sshpass` package.
 
 ## RDP
 
-##### <sup>[windows]</sup> MSTSC
+##### MSTSC <sup>[windows]</sup>
 
 * **Scheme:** `rdp`
 * **Command:**
@@ -38,7 +38,7 @@ cmd://cmd /c "cmdkey /generic:TERMSRV/{URL:HOST} /user:{USERNAME} /pass:{PASSWOR
 
 *Thanks Valiant from bitcollectors.com and [DeWhite](https://habrahabr.ru/users/dewhite/) from habrahabr.ru for this solution*
 
-##### <sup>[linux]</sup> Remmina
+##### Remmina <sup>[linux]</sup>
 
 * **Scheme:** `rdp`
 * **Command:**
@@ -59,7 +59,7 @@ chmod +x /usr/local/bin/remmina-encode-password.py
 
 ## VNC
 
-##### <sup>[windows]</sup> RealVNC
+##### RealVNC <sup>[windows]</sup>
 
 * **Scheme:** `vnc`
 * **Command:**
@@ -69,7 +69,7 @@ cmd://java -jar "{ENV_PROGRAMFILES}\tightvnc-jviewer.jar" -user="{USERNAME}" -pa
 
 Save `tightvnc-jviewer.jar` to `C:\Program Files\tightvnc-jviewer.jar`.
 
-##### <sup>[linux]</sup> Remmina
+##### Remmina <sup>[linux]</sup>
 
 * **Scheme:** `vnc`
 * **Command:**
@@ -91,7 +91,7 @@ chmod +x /usr/local/bin/remmina-encode-password.py
 
 ## SAMBA
 
-##### <sup>[windows]</sup> Explorer
+##### Explorer <sup>[windows]</sup>
 
 * **Scheme:** `smb`
 * **Command:**
@@ -99,7 +99,7 @@ chmod +x /usr/local/bin/remmina-encode-password.py
 cmd://cmd /c "net use "{BASE:RMVSCM}" /user:"{USERNAME}" "{PASSWORD}" && start \\{BASE:RMVSCM}"
 ```
 
-##### <sup>[linux]</sup> Nautilus / Thunar / Dolphin
+##### Nautilus / Thunar / Dolphin <sup>[linux]</sup>
 
 * **Scheme:** `smb`
 * **Command:**
@@ -117,7 +117,7 @@ For Thunar and Dolphin is the same command, just replace `nautilus` to `thunar` 
 
 ## FTP
 
-##### <sup>[windows]</sup> FileZilla FTP Client
+##### FileZilla FTP Client <sup>[windows]</sup>
 
 * **Scheme:** `ftp`
 * **Command:**
@@ -125,7 +125,7 @@ For Thunar and Dolphin is the same command, just replace `nautilus` to `thunar` 
 cmd://"{ENV_PROGRAMFILES_X86}\FileZilla FTP Client\filezilla.exe" 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
 ```
 
-##### <sup>[windows]</sup> Windows Explorer
+##### Windows Explorer <sup>[windows]</sup>
 
 * **Scheme:** `ftp`
 * **Command:**
@@ -133,7 +133,7 @@ cmd://"{ENV_PROGRAMFILES_X86}\FileZilla FTP Client\filezilla.exe" 'ftp://{USERNA
 cmd://"explorer.exe" 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
 ```
 
-##### <sup>[linux]</sup> FileZilla FTP Client
+##### FileZilla FTP Client <sup>[linux]</sup>
 
 * **Scheme:** `ftp`
 * **Command:**
@@ -141,7 +141,7 @@ cmd://"explorer.exe" 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
 cmd://filezilla 'ftp://{USERNAME}:{PASSWORD}@{BASE:RMVSCM}'
 ```
 
-##### <sup>[linux]</sup> Nautilus / Thunar / Dolphin
+##### Nautilus / Thunar / Dolphin <sup>[linux]</sup>
 
 * **Scheme:** `smb`
 * **Command:**
@@ -158,7 +158,7 @@ For Thunar and Dolphin is the same command, just replace `nautilus` to `thunar` 
 
 ## TeamViewer
 
-##### <sup>[windows]</sup> TeamViewer
+##### TeamViewer <sup>[windows]</sup>
 
 * **Scheme:** `teamviewer`
 * **Command:**
@@ -166,7 +166,7 @@ For Thunar and Dolphin is the same command, just replace `nautilus` to `thunar` 
 cmd://"{ENV_PROGRAMFILES_X86}\TeamViewer\TeamViewer.exe" -i "{USERNAME}" --Password "{PASSWORD}"
 ```
 
-##### <sup>[linux]</sup> TeamViewer
+##### TeamViewer <sup>[linux]</sup> 
 
 * **Scheme:** `teamviewer`
 * **Command:**
@@ -176,7 +176,7 @@ cmd://teamviewer -i "{USERNAME}" --Password "{PASSWORD}"
 
 ## Winbox
 
-##### <sup>[windows]</sup> Winbox
+##### Winbox <sup>[windows]</sup>
 
 * **Scheme:** `winbox`
 * **Command:**
@@ -186,7 +186,7 @@ cmd://{ENV_PROGRAMFILES_X86}\winbox.exe '{BASE:RMVSCM}' '{USERNAME}' '{PASSWORD}
 
 Сохраните `winbox.exe` в `C:\Program Files (x86)\winbox.exe`.
 
-##### <sup>[linux]</sup> Winbox
+##### Winbox <sup>[linux]</sup>
 
 * **Scheme:** `winbox`
 * **Command:**
@@ -199,7 +199,7 @@ cmd://winbox '{BASE:RMVSCM}' '{USERNAME}' '{PASSWORD}'
 
 ## Cisco
 
-####<sup>[windows]</sup>  PuTTY
+##### PuTTY <sup>[windows]</sup> 
 
 * **Scheme:** `cisco`
 * **Command:**
@@ -214,7 +214,7 @@ cmd://{ENV_PROGRAMFILES_X86}\scriptsdir\Connector_Cisco.vbs "{S:lan}" "{USERNAME
 
 ## VSphere Client
 
-##### <sup>[windows]</sup> VpxClient
+##### VpxClient <sup>[windows]</sup> 
 * **Scheme:** `vpx`
 * **Command:**
 ```
