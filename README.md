@@ -211,3 +211,12 @@ cmd://{ENV_PROGRAMFILES_X86}\scriptsdir\Connector_Cisco.vbs "{S:lan}" "{USERNAME
   Save it to: `C:\Program Files (x86)\Connector_Cisco.vbs`
 
     *Thanks [therb1](https://habrahabr.ru/users/therb1/) from habrahabr.ru for this solution and script*
+
+## VSphere Client
+
+##### <sup>[windows]</sup> VpxClient
+* ** Scheme:** `vpx`
+* **Command:**
+```
+cmd://"{ENV_PROGRAMFILES_X86}\VMware\Infrastructure\Virtual Infrastructure Client\Launcher\VpxClient.exe" -i -s {URL:RMVSCM} -u {USERNAME} -p {PASSWORD}
+```
