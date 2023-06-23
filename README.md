@@ -96,7 +96,7 @@ chmod +x /usr/local/bin/remmina-encode-password.py
 * **Scheme:** `smb`
 * **Command:**
 ```
-cmd://cmd /c "net use "{BASE:RMVSCM}" /user:"{USERNAME}" "{PASSWORD}" && start \\{BASE:RMVSCM}"
+cmd://cmd /c "net use "\\{T-REPLACE-RX:!{BASE:RMVSCM}!/!\!}" /persistent:no /user:"{USERNAME}" "{PASSWORD}" && start \\{T-REPLACE-RX:!{BASE:RMVSCM}!/!\!}"
 ```
 
 ##### Nautilus / Thunar / Dolphin <sup>[linux]</sup>
