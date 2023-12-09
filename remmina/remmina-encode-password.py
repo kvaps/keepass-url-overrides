@@ -1,10 +1,10 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 
 import base64
 import os
 import re
 import sys
-from Crypto.Cipher import DES3
+from Cryptodome.Cipher import DES3
 from os.path import expanduser
 
 home = expanduser("~")
@@ -31,4 +31,4 @@ result = cipher.encrypt(plain)
 result = base64.b64encode(result)
 result = result.decode('utf-8')
 
-print result
+print(result)
