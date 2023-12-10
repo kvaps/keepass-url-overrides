@@ -38,6 +38,17 @@ cmd://cmd /c "cmdkey /generic:TERMSRV/{URL:HOST} /user:{USERNAME} /pass:{PASSWOR
 
 *Thanks Valiant from bitcollectors.com and [DeWhite](https://habrahabr.ru/users/dewhite/) from habrahabr.ru for this solution*
 
+  The following alternative will:
+  1. Delete any existing key from the cache
+  2. Add the key to the cache (even if the delete failed)
+  3. Run MSTSC asynchroniosly
+  4. Wait 5 seconds
+  5. Delete the key from the cache
+  6. Close the CMD window
+```
+cmd:// cmd /c "cmdkey /delete:TERMSRV/{URL:RMVSCM} & cmdkey /generic:TERMSRV/{URL:RMVSCM} /user:{USERNAME} /pass:{PASSWORD} && Start mstsc /v:{URL:RMVSCM} & timeout /t 5 /nobreak & cmdkey /delete:TERMSRV/{URL:RMVSCM} & Exit"
+```
+
 ##### Remmina <sup>[linux]</sup>
 
 * **Scheme:** `rdp`
